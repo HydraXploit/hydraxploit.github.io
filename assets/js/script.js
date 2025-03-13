@@ -16,15 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         },
         {
-            "title": "Tech&Meet: Hack The Holidays - Insights from Belgium's Top Ethical Hacker",
-            "description": [
+            title: "Tech&Meet: Hack The Holidays - Insights from Belgium's Top Ethical Hacker",
+            description: [
                 "On December 17, 2024, I attended a Tech&Meet session at Howest University of Applied Sciences, featuring Robbe Verwilghen, a distinguished alumnus and renowned ethical hacker. Robbe, who hails from Lebbeke, earned the prestigious title of 'Ethical Government Hacker of 2024,' securing a highly sought-after SANS training course and GIAC certification, valued at over €10,000. Alongside this achievement, he humorously embraced the title 'The Dupe King' for reporting the highest number of duplicate findings during the competition.",
                 "Robbe shared his experiences participating in Belgium’s government hacking tournament, 'Hack The Government,' where ethical hackers were invited to test the security of government systems. Due to the classified nature of the findings, he couldn’t disclose specific vulnerabilities he uncovered, but he offered valuable insights into his approach. His key takeaway? 'Act dumb and click on everything'—a phrase that, in the world of ethical hacking, underscores the importance of thinking outside the box and exploring unexpected attack vectors.",
                 "Beyond competition strategies, Robbe walked us through his journey in cybersecurity, from bug bounty hunting to becoming a QA engineer and penetration tester. His work with Intigriti, a leading European cybersecurity firm, provided fascinating insights into real-world security testing, payload crafting, and methodologies like SQL injection. He also shared useful resources and scripts for testing vulnerabilities, helping attendees gain a better understanding of how ethical hackers analyze and secure digital systems.",
                 "Despite the limitations on discussing classified details, Robbe managed to deliver an engaging and insightful session. His energy and passion for cybersecurity were evident, making it clear why he’s one of Belgium’s top ethical hackers. The event reinforced the importance of ethical hacking in strengthening national security and highlighted the opportunities available in this field for those willing to dive deep into the world of cybersecurity.",
                 "Overall, this Tech&Meet session was both inspiring and informative. Hearing firsthand from someone who has actively contributed to securing government infrastructure was an incredible experience. Robbe’s journey is proof that curiosity, persistence, and a hacker mindset can open doors to exciting and impactful careers in cybersecurity."
             ],
-            "images": [
+            images: [
                 "./assets/images/HackTheHolidays_1.jpg"
             ]
         }
@@ -34,16 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        items.forEach(item => {
+        items.forEach((item, index) => {
             const div = document.createElement("div");
             div.classList.add(type === "project" ? "project-item" : "blog-item");
             div.innerHTML = `<h3>${item.title}</h3><p>${item.description[0]}</p>`;
-            div.addEventListener("click", () => openOverlay(item));
+            div.addEventListener("click", () => openOverlay(item, index, type));
             container.appendChild(div);
         });
     }
 
-    function openOverlay(item) {
+    function openOverlay(item, index, type) {
         const overlay = document.getElementById("overlay");
         const overlayContent = document.querySelector(".overlay-content");
 
@@ -84,7 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function openImageFullScreen(src) {
         const overlayImage = document.createElement("div");
         overlayImage.classList.add("fullscreen-overlay");
-        overlayImage.innerHTML = `<img src="${src}" class="fullscreen-img"><span class="close-img-btn" onclick="this.parentElement.remove()">&times;</span>`;
+        overlayImage.innerHTML = `
+            <img src="${src}" class="fullscreen-img">
+            <span class="close-img-btn" onclick="this.parentElement.remove()">&times;</span>
+        `;
 
         document.body.appendChild(overlayImage);
 
