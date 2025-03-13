@@ -70,7 +70,6 @@ header h1 {
 .container {
     width: 80%;
     margin: auto;
-    padding: 20px 0;
     flex: 1;
 }
 
@@ -102,10 +101,6 @@ p {
 #projects>p,
 #blog>p {
     margin-bottom: 25px;
-}
-
-#blog {
-    margin-bottom: 120px;
 }
 
 .button {
@@ -277,9 +272,6 @@ footer {
     color: #a0a0a0;
     text-align: center;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
 @media (max-width: 768px) {
