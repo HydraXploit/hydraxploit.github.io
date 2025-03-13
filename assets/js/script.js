@@ -29,9 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
             div.addEventListener("click", () => openOverlay(item));
             container.appendChild(div);
         });
-    };
+    }
 
     function openOverlay(item) {
+        const overlay = document.getElementById("overlay");
+        const overlayContent = document.querySelector(".overlay-content");
+
         document.getElementById("overlay-title").innerText = item.title;
 
         const textContainer = document.getElementById("overlay-text");
@@ -53,19 +56,32 @@ document.addEventListener("DOMContentLoaded", function () {
             galleryContainer.appendChild(img);
         });
 
-        document.getElementById("overlay").style.display = "flex";
-    };
+        overlay.style.display = "flex";
+
+        overlay.addEventListener("click", (event) => {
+            if (!overlayContent.contains(event.target)) {
+                closeOverlay();
+            }
+        });
+    }
 
     function closeOverlay() {
         document.getElementById("overlay").style.display = "none";
-    };
+    }
 
     function openImageFullScreen(src) {
         const overlayImage = document.createElement("div");
         overlayImage.classList.add("fullscreen-overlay");
         overlayImage.innerHTML = `<img src="${src}" class="fullscreen-img"><span class="close-img-btn" onclick="this.parentElement.remove()">&times;</span>`;
+
         document.body.appendChild(overlayImage);
-    };
+
+        overlayImage.addEventListener("click", (event) => {
+            if (event.target === overlayImage) {
+                overlayImage.remove();
+            }
+        });
+    }
 
     document.querySelector(".close-btn").addEventListener("click", closeOverlay);
 
