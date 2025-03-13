@@ -220,3 +220,31 @@ footer {
     bottom: 0;
     left: 0;
 }
+
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 95%;
+        padding: 20px;
+        max-height: 85vh;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+    .overlay-content h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .close-btn,
+    .close-img-btn {
+        font-size: 40px;
+    }
+
+    .gallery-img {
+        max-height: 200px;
+    }
+}
