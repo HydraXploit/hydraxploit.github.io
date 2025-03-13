@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [];
-
     const blogs = [
         {
             title: "Tech&Meet: Belgian Cyber Command (CyCom)",
@@ -13,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
             ],
             images: [
                 "./assets/images/CyCom_1.jpg",
-                "./assets/images/CyCom_2.jpg",
-            ],
+                "./assets/images/CyCom_2.jpg"
+            ]
         },
         {
             "title": "Tech&Meet: Hack The Holidays - Insights from Belgium's Top Ethical Hacker",
@@ -26,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Overall, this Tech&Meet session was both inspiring and informative. Hearing firsthand from someone who has actively contributed to securing government infrastructure was an incredible experience. Robbe’s journey is proof that curiosity, persistence, and a hacker mindset can open doors to exciting and impactful careers in cybersecurity."
             ],
             "images": [
-                "./assets/images/HackTheHolidays_1.jpg",
-            ],
-        },
+                "./assets/images/HackTheHolidays_1.jpg"
+            ]
+        }
     ];
 
     function generateList(items, containerId, type) {
