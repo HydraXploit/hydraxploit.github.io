@@ -274,3 +274,38 @@ footer {
     width: 100%;
     box-shadow: 0 0 15px rgba(0, 255, 153, 0.4);
 }
+
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 25px;
+    }
+
+    h2,
+    .overlay-content h2 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .gallery-img {
+        max-width: 100%;
+    }
+
+    .fullscreen-img {
+        max-width: 95%;
+        max-height: 95%;
+    }
+
+    .close-btn,
+    .close-img-btn {
+        font-size: 45px;
+        top: 15px;
+        right: 20px;
+        padding: 10px 15px;
+    }
+}
