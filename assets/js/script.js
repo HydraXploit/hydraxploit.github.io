@@ -46,7 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        items.forEach((item) => {
+        container.innerHTML = "";
+
+        if (items.length === 0) {
+            const emptyMessage = document.createElement("p");
+            emptyMessage.classList.add("empty-message");
+            emptyMessage.innerText = type === "project" ? "No projects available yet." : "No blog posts available yet.";
+            container.appendChild(emptyMessage);
+            return;
+        }
+
+        items.forEach(item => {
             const div = document.createElement("div");
             div.classList.add(type === "project" ? "project-item" : "blog-item");
             div.innerHTML = `<h3>${item.title}</h3><p>${item.description[0]}</p>`;
