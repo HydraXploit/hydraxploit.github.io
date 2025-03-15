@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
                 "./assets/images/HackTheHolidays_1.jpg"
             ]
+        },
+        {
+            "title": "Cyber Security Challenge Belgium 2025: The Avalanche Experience",
+            "description": [
+                "On March 14-15, 2025, I participated in the Cyber Security Challenge Belgium (CSCBE) as part of Team Avalanche. This competition brings together students from all over the country to test their cybersecurity skills in a high-pressure, Capture The Flag (CTF)-style event. The goal? Solve as many challenges as possible within the given time and rank as high as possible on the leaderboard.",
+                "The qualifier rounds threw a mix of categories at us, ranging from reverse engineering, networking, cryptography, web exploitation, forensic analysis, to even some trivia questions. Each challenge was a puzzle waiting to be cracked—some were straightforward, while others were downright brutal. There were moments where we were on a roll, solving back-to-back challenges, and others where we were stuck for hours. Classic CTF experience.",
+                "Team Avalanche finished in 133rd place. Sure, we didn’t advance to the finals, but that didn’t take away from the experience. The thrill of working under pressure, the rush of finally solving a challenge after a struggle, and the sheer excitement of competing against some of the best student hackers in Belgium made it all worth it.",
+                "Overall, CSCBE 2025 was a solid experience—frustrating at times, exhilarating at others, but absolutely worth it. It reinforced my love for cybersecurity, taught me a lot about problem-solving under pressure, and left me more motivated than ever to level up my skills for the next big challenge. Team Avalanche might not have made it to the finals this year, but next time? We’re coming back stronger."
+            ],
+            "images": [
+                "./assets/images/CSCBE2025_Scoreboard.jpg"
+            ]
         }
     ];
 
@@ -34,16 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        items.forEach((item, index) => {
+        items.forEach((item) => {
             const div = document.createElement("div");
             div.classList.add(type === "project" ? "project-item" : "blog-item");
             div.innerHTML = `<h3>${item.title}</h3><p>${item.description[0]}</p>`;
-            div.addEventListener("click", () => openOverlay(item, index, type));
+            div.addEventListener("click", () => openOverlay(item));
             container.appendChild(div);
         });
     }
 
-    function openOverlay(item, index, type) {
+    function openOverlay(item) {
         const overlay = document.getElementById("overlay");
         const overlayContent = document.querySelector(".overlay-content");
 
