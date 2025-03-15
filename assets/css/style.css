@@ -154,6 +154,14 @@ p {
     margin-top: 8px;
 }
 
+.empty-message {
+    color: #888;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
 .overlay {
     display: none;
     position: fixed;
