@@ -220,7 +220,7 @@ p {
 
 .social-links {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 12px;
     margin-top: 15px;
     position: relative;
@@ -240,7 +240,7 @@ p {
     border-radius: 6px;
     font-size: 0.9em;
     position: absolute;
-    bottom: 150%;
+    top: 130%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -362,5 +362,10 @@ footer {
         top: 15px;
         right: 20px;
         padding: 10px 15px;
+    }
+
+    .tooltip {
+        bottom: 130%;
+        top: auto;
     }
 }
