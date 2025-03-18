@@ -218,6 +218,51 @@ p {
     transform: scale(1.2);
 }
 
+.social-links {
+    display: flex;
+    justify-content: left;
+    gap: 12px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.social-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: rgba(0, 255, 153, 0.9);
+    color: #121212;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.social-icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
