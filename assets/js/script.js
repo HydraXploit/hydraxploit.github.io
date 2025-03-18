@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     platform: "GitHub",
                     link: "https://www.github.com/HydraXploit/hydraxploit.github.io",
                     icon: "./assets/images/github.ico",
-                    tooltip: "My GitHub repository with the webpage source code"
+                    tooltip: "Webpage source code on GitHub"
                 }
             ]
         }
