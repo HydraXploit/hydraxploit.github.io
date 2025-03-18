@@ -5,8 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
             description: [
                 "A central place to share my cybersecurity journey, document experiences, and highlight personal projects was something I always wanted. So, I built my own website. A platform where I can write about the competitions I’ve participated in, the events I’ve attended, and the projects I’m working on.",
                 "The design is centered around a dark, neon-infused theme—fitting for a cybersecurity-focused space and perfectly complementing my logo. Every element was selected to reflect the aesthetics of ethical hacking and digital security. The site includes a dedicated blog section for in-depth write-ups on competitions like the Cyber Security Challenge Belgium, Tech&Meet sessions, and other cybersecurity topics. Additionally, there's a project section where I can showcase my work and developments.",
-                "For the technical side, I kept it simple yet functional. The site is built using plain HTML, CSS, and JavaScript—no unnecessary frameworks, just a lightweight, efficient setup. The UI features smooth dynamic overlays to display blog posts and projects without clutter, maintaining a clean user experience. Everything is fully responsive, ensuring it looks sharp and works seamlessly across both desktop and mobile devices.",
-                "Having my own platform gives me the flexibility to shape it however I want and evolve it over time. Whether it's writing about cybersecurity, sharing insights, or presenting future projects, this website serves as the foundation for it all."
+                "For the technical side, I kept it simple yet functional. The site is built using plain HTML, CSS, and JavaScript — no unnecessary frameworks, just a lightweight, efficient setup. The UI features smooth dynamic overlays to display blog posts and projects without clutter, maintaining a clean user experience. Everything is fully responsive, ensuring it looks sharp and works seamlessly across both desktop and mobile devices.",
+                "Having my own platform gives me the flexibility to shape it however I want and evolve it over time. Whether it's writing about cybersecurity, sharing insights, or presenting future projects, this website serves as the foundation for it all.",
+            ],
+            socials: [
+                {
+                    platform: "GitHub",
+                    link: "https://www.github.com/HydraXploit/hydraxploit.github.io",
+                    icon: "./assets/images/github.ico",
+                    tooltip: "My GitHub repository with the webpage source code"
+                }
             ]
         }
     ];
@@ -89,9 +97,38 @@ document.addEventListener("DOMContentLoaded", function () {
             textContainer.appendChild(p);
         });
 
+        const socialsContainer = document.getElementById("overlay-socials");
+        socialsContainer.innerHTML = "";
+        if (item.socials && item.socials.length > 0) {
+            item.socials.forEach(social => {
+                const a = document.createElement("a");
+                a.href = social.link;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.classList.add("social-icon-container");
+
+                const img = document.createElement("img");
+                img.src = social.icon;
+                img.alt = `${social.platform} icon`;
+                img.classList.add("social-icon");
+
+                a.appendChild(img);
+
+                if (social.tooltip) {
+                    const tooltip = document.createElement("span");
+                    tooltip.classList.add("tooltip");
+                    tooltip.innerText = social.tooltip;
+
+                    a.appendChild(tooltip);
+                };
+
+                socialsContainer.appendChild(a);
+            });
+        };
+
         const galleryContainer = document.getElementById("overlay-gallery");
         galleryContainer.innerHTML = "";
-        if (item.images) {
+        if (item.images && item.images.length > 0) {
             item.images.forEach(imgSrc => {
                 const img = document.createElement("img");
                 img.src = imgSrc;
