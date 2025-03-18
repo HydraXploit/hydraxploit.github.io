@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const projects = [];
+    const projects = [
+        {
+            title: "Building My Own Cybersecurity Blog & Portfolio",
+            description: [
+                "A central place to share my cybersecurity journey, document experiences, and highlight personal projects was something I always wanted. So, I built my own website. A platform where I can write about the competitions I’ve participated in, the events I’ve attended, and the projects I’m working on.",
+                "The design is centered around a dark, neon-infused theme—fitting for a cybersecurity-focused space and perfectly complementing my logo. Every element was selected to reflect the aesthetics of ethical hacking and digital security. The site includes a dedicated blog section for in-depth write-ups on competitions like the Cyber Security Challenge Belgium, Tech&Meet sessions, and other cybersecurity topics. Additionally, there's a project section where I can showcase my work and developments.",
+                "For the technical side, I kept it simple yet functional. The site is built using plain HTML, CSS, and JavaScript—no unnecessary frameworks, just a lightweight, efficient setup. The UI features smooth dynamic overlays to display blog posts and projects without clutter, maintaining a clean user experience. Everything is fully responsive, ensuring it looks sharp and works seamlessly across both desktop and mobile devices.",
+                "Having my own platform gives me the flexibility to shape it however I want and evolve it over time. Whether it's writing about cybersecurity, sharing insights, or presenting future projects, this website serves as the foundation for it all."
+            ]
+        }
+    ];
     const blogs = [
         {
             title: "Tech&Meet: Belgian Cyber Command (CyCom)",
@@ -81,14 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const galleryContainer = document.getElementById("overlay-gallery");
         galleryContainer.innerHTML = "";
-        item.images.forEach(imgSrc => {
-            const img = document.createElement("img");
-            img.src = imgSrc;
-            img.alt = `${item.title} image`;
-            img.classList.add("gallery-img");
-            img.addEventListener("click", () => openImageFullScreen(imgSrc));
-            galleryContainer.appendChild(img);
-        });
+        if (item.images) {
+            item.images.forEach(imgSrc => {
+                const img = document.createElement("img");
+                img.src = imgSrc;
+                img.alt = `${item.title} image`;
+                img.classList.add("gallery-img");
+                img.addEventListener("click", () => openImageFullScreen(imgSrc));
+                galleryContainer.appendChild(img);
+            });
+        };
 
         overlay.style.display = "flex";
 
