@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let projects = [];
     let blogs = [];
 
-    const pages = {
-        about: `<h2>About HydraXploit</h2><p>Cybersecurity Enthusiast & Ethical Hacker. Passionate about understanding systems, exploring vulnerabilities, and staying deep in the digital shadows.</p>`
-    };
+    const pages = {};
 
     const commands = {
         help: () => logTerminal("Available commands:\nabout, projects, blog, open blog [n], open project [n], exit, whoami, clear"),
@@ -34,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return fetch(`./data/${file}`)
             .then(res => res.json())
             .then(data => {
-                console.log(`Fetched ${type}:`, data);
                 store.push(...data);
                 pages[type] = generateCards(data, type);
             })
@@ -46,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
             fetchData("projects.json", projects, "projects"),
             fetchData("blogs.json", blogs, "blog")
         ]);
+
+        pages.about = `<h2>About HydraXploit</h2><p>Cybersecurity Enthusiast & Ethical Hacker. Passionate about understanding systems, exploring vulnerabilities, and staying deep in the digital shadows.</p>`;
 
         const projectIndexRaw = params.get("project") || params.get("projects");
         const blogIndexRaw = params.get("blog") || params.get("blogs");
@@ -70,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (section === "about") {
                 typeAboutText(pages.about);
             } else {
-                content.innerHTML = pages[section] || "";
+                content.innerHTML = pages[section] || "<p>No content available.</p>";
             }
             content.classList.remove("fade-out");
             content.classList.add("fade-in");
@@ -91,7 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.openModal = function (type, index) {
         const array = type === "project" ? projects : blogs;
         const item = array[index];
-        if (!item) return console.warn(`No item found for ${type}[${index}]`);
+
+        modal.classList.remove("fade-out", "hidden");
+        modal.classList.add("fade-in");
+
+        if (!item) {
+            modalTitle.textContent = "Item Not Found";
+            modalBody.innerHTML = `<p>This item doesn't exist. Maybe you typo'd the URL?</p>`;
+            return;
+        }
 
         modalTitle.textContent = item.title;
         let bodyHTML = item.description.map(p => `<p>${p}</p>`).join("");
@@ -109,12 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>`;
 
         modalBody.innerHTML = bodyHTML;
-        modal.classList.remove("hidden");
         history.replaceState(null, "", shareUrl);
     };
 
     window.closeModal = () => {
-        modal.classList.add("hidden");
+        modal.classList.remove("fade-in");
+        modal.classList.add("fade-out");
+        setTimeout(() => modal.classList.add("hidden"), 250);
         history.replaceState(null, "", window.location.pathname);
     };
 
@@ -132,6 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const input = terminalInput.value.trim();
             terminalInput.value = "";
             processCommand(input);
+        } else if (e.key === "Tab") {
+            e.preventDefault();
+            const input = terminalInput.value.trim().toLowerCase();
+            const matches = Object.keys(commands).filter(cmd => cmd.startsWith(input));
+            if (matches.length === 1) terminalInput.value = matches[0];
         }
     });
 
@@ -144,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function processCommand(input) {
         const lower = input.toLowerCase();
-        logTerminal(`> ${input}`);
+        logTerminal(`HydraXploit@Nidhogg:~$ ${input}`);
 
         if (commands[lower]) return commands[lower]();
         if (lower.startsWith("open blog")) return commands["open blog"](parseInt(lower.split(" ").pop()));
@@ -159,8 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function typeAboutText(rawHtml) {
         const temp = document.createElement("div");
         temp.innerHTML = rawHtml;
-        const h2 = temp.querySelector("h2").innerText;
-        const p = temp.querySelector("p").innerText;
+        const h2 = temp.querySelector("h2")?.innerText || "";
+        const p = temp.querySelector("p")?.innerText || "";
         content.innerHTML = `<h2>${h2}</h2><pre id="typewriter"></pre>`;
         const pre = $("typewriter");
         let i = 0;
