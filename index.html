@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>HydraXploit | Cybersecurity & Hacking</title>
-
-        <link rel="icon" type="image/x-icon" href="./assets/images/Hydra_Logo.ico">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="icon" href="./assets/images/Hydra_Logo.ico" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
         <script defer src="./assets/js/script.js"></script>
     </head>
 
     <body>
-        <header>
-            <div class="header-content">
-                <img src="./assets/images/Hydra_Logo.webp" alt="Profile Picture" class="profile-pic">
-                <div class="header-text">
+        <div id="main-ui">
+            <header>
+                <img src="./assets/images/Hydra_Logo.png" alt="HydraXploit Logo" class="logo" />
+                <div class="title-text">
                     <h1>HydraXploit</h1>
-                    <p>Diving deep into cybersecurity, ethical hacking, and digital exploration</p>
+                    <p>Cybersecurity Enthusiast & Ethical Hacker</p>
+                </div>
+            </header>
+
+            <div class="layout">
+                <aside class="nav-pane">
+                    <ul>
+                        <li data-section="about" onclick="navigate('about')">About</li>
+                        <li data-section="projects" onclick="navigate('projects')">Projects</li>
+                        <li data-section="blog" onclick="navigate('blog')">Blog</li>
+                        <li onclick="toggleTerminal()">Terminal</li>
+                    </ul>
+                </aside>
+
+                <main id="content"></main>
+            </div>
+
+            <div id="modal-overlay" class="hidden">
+                <div class="modal">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-body"></div>
                 </div>
             </div>
-        </header>
 
-        <div class="container">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>Hi there! I'm HydraXploit, a cybersecurity enthusiast and ethical hacker. I thrive on uncovering
-                    vulnerabilities, tackling CTF challenges, and pushing systems to their limits — all within legal
-                    boundaries.</p>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <p>A selection of projects I’ve worked on.</p>
-                <div id="project-list"></div>
-            </section>
-
-            <section id="blog">
-                <h2>Blog</h2>
-                <p>Articles and insights on topics that interest me.</p>
-                <div id="blog-list"></div>
-            </section>
-        </div>
-
-        <div id="overlay" class="overlay">
-            <div class="overlay-content">
-                <span class="close-btn" onclick="closeOverlay()">&times;</span>
-                <h2 id="overlay-title"></h2>
-                <div id="overlay-text"></div>
-                <div id="overlay-socials" class="social-links"></div>
-                <div id="overlay-gallery" class="gallery"></div>
+            <div id="terminal" class="terminal hidden">
+                <div class="terminal-output" id="terminal-output"></div>
+                <input type="text" id="terminal-input" placeholder=">_" autofocus />
             </div>
         </div>
-
-        <footer>
-            <p>&copy; 2025 HydraXploit - All Rights Reserved</p>
-        </footer>
     </body>
 </html>

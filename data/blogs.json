@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Tech&Meet: Belgian Cyber Command (CyCom)",
+        "description": [
+            "On November 12, 2024, I attended a Tech&Meet session at Howest University of Applied Sciences, where Lieutenant Colonel Gunther Godefridis from the Belgian Cyber Command (CyCom) gave an in-depth presentation about their role in national cybersecurity.",
+            "Lieutenant Colonel Godefridis, with over 30 years of military experience, broke down CyCom\u2019s responsibilities\u2014covering cyber defense, intelligence gathering, and digital threat mitigation.",
+            "One part that really caught my attention was the strict process of obtaining a top-secret security clearance. It\u2019s not just the individual getting checked\u2014they dig into your background, your family, and probably even that one dodgy Facebook post from ten years ago.",
+            "Then came the recruitment pitch\u2014probably the strongest part of the presentation. CyCom made it very clear they\u2019re actively looking for skilled professionals, whether as a civilian specialist, reservist, or full-time career soldier.",
+            "Overall, this Tech&Meet wasn\u2019t just informative\u2014it was genuinely engaging. Hearing directly from those operating at the national level in cybersecurity gave a whole new perspective on the field."
+        ],
+        "images": [
+            "./assets/images/CyCom_1.jpg",
+            "./assets/images/CyCom_2.jpg"
+        ]
+    },
+    {
+        "title": "Tech&Meet: Hack The Holidays - Insights from Belgium's Top Ethical Hacker",
+        "description": [
+            "On December 17, 2024, I attended a Tech&Meet session at Howest University of Applied Sciences, featuring Robbe Verwilghen, a distinguished alumnus and renowned ethical hacker.",
+            "Robbe shared his experiences participating in Belgium\u2019s government hacking tournament, 'Hack The Government,' where ethical hackers were invited to test the security of government systems.",
+            "Beyond competition strategies, Robbe walked us through his journey in cybersecurity, from bug bounty hunting to becoming a QA engineer and penetration tester. His work with Intigriti provided fascinating insights into real-world security testing.",
+            "Despite the limitations on discussing classified details, Robbe managed to deliver an engaging and insightful session. His energy and passion for cybersecurity were evident.",
+            "Robbe\u2019s journey is proof that curiosity, persistence, and a hacker mindset can open doors to exciting and impactful careers in cybersecurity."
+        ],
+        "images": [
+            "./assets/images/HackTheHolidays_1.jpg"
+        ]
+    },
+    {
+        "title": "Cyber Security Challenge Belgium 2025: The Avalanche Experience",
+        "description": [
+            "On March 14-15, 2025, I participated in the Cyber Security Challenge Belgium (CSCBE) as part of Team Avalanche. This competition brings together students from all over the country to test their cybersecurity skills in a high-pressure, Capture The Flag (CTF)-style event.",
+            "The qualifier rounds threw a mix of categories at us, ranging from reverse engineering, networking, cryptography, web exploitation, forensic analysis, to even some trivia questions.",
+            "Team Avalanche finished in 133rd place. Sure, we didn\u2019t advance to the finals, but that didn\u2019t take away from the experience. The thrill of working under pressure, the rush of finally solving a challenge after a struggle\u2014it was all worth it.",
+            "Overall, CSCBE 2025 was a solid experience\u2014frustrating at times, exhilarating at others, but absolutely worth it. It reinforced my love for cybersecurity, taught me a lot about problem-solving under pressure, and left me more motivated than ever."
+        ],
+        "images": [
+            "./assets/images/CSCBE2025_Scoreboard.jpg"
+        ]
+    }
+]
