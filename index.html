@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HydraXploit | Cybersecurity & Hacking</title>
-        <link rel="icon" href="./assets/images/Hydra_Logo.ico" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <script defer src="./assets/js/script.js"></script>
-    </head>
 
-    <body>
-        <div id="main-ui">
-            <header>
-                <img src="./assets/images/Hydra_Logo.png" alt="HydraXploit Logo" class="logo" />
-                <div class="title-text">
-                    <h1>HydraXploit</h1>
-                    <p>Cybersecurity Enthusiast & Ethical Hacker</p>
-                </div>
-            </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HydraXploit | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-            <div class="layout">
-                <aside class="nav-pane">
-                    <ul>
-                        <li data-section="about" onclick="navigate('about')">About</li>
-                        <li data-section="projects" onclick="navigate('projects')">Projects</li>
-                        <li data-section="blog" onclick="navigate('blog')">Blog</li>
-                        <li onclick="toggleTerminal()">Terminal</li>
-                    </ul>
-                </aside>
-
-                <main id="content"></main>
-            </div>
-
-            <div id="modal-overlay" class="hidden">
-                <div class="modal">
-                    <span class="close-btn" onclick="closeModal()">&times;</span>
-                    <h2 id="modal-title"></h2>
-                    <div id="modal-body"></div>
+<body>
+    <header>
+        <div class="container header-flex">
+            <div class="header-left">
+                <img src="./assets/images/Hydra_Logo.png" alt="HydraXploit Logo" class="logo pulse" />
+                <div class="title-block">
+                    <h1 class="glow-text">HydraXploit</h1>
+                    <p class="title-sub">Cybersecurity Enthusiast | Ethical Hacker</p>
                 </div>
             </div>
-
-            <div id="terminal" class="terminal hidden">
-                <div class="terminal-output" id="terminal-output"></div>
-                <input type="text" id="terminal-input" placeholder=">_" autofocus />
-            </div>
+            <nav class="nav">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./blog/index.html">Blog</a>
+            </nav>
         </div>
-    </body>
+    </header>
+
+    <main class="container fade-in">
+        <section class="intro">
+            <h2>Welcome</h2>
+            <p>This is my personal cybersecurity blog and portfolio. I use it to reflect on events I've attended,
+                challenges I've tackled, and projects I've worked on throughout my journey in IT and cybersecurity.</p>
+        </section>
+
+        <section class="featured">
+            <h2>Recent Blog Posts</h2>
+            <div class="card-grid">
+                <a class="card" href="./blog/cycom.html">
+                    <h3>Belgian Cyber Command</h3>
+                    <p>Inside CyCom's national cyber defense strategy.</p>
+                </a>
+                <a class="card" href="./blog/hackthegov.html">
+                    <h3>Hack The Holidays</h3>
+                    <p>Insights from Robbe Verwilghen on ethical hacking and real-world experience.</p>
+                </a>
+                <a class="card" href="./blog/cscbe.html">
+                    <h3>CSCBE 2025</h3>
+                    <p>My experience competing at Belgium’s largest student cybersecurity competition.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="context-block">
+            <h2>What You'll Find Here</h2>
+            <p>This blog highlights key moments in my cybersecurity studies. Every post comes from something I actually
+                experienced — no filler, no reposts. Just events, competitions, and insights that shaped how I think
+                about the field.</p>
+            <p>I built this site as a place to keep track of where I’ve been, and where I want to go next. It’s also
+                something I can share with others in IT — whether during job applications or networking — to give a real
+                sense of my interests and mindset.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HydraXploit. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
 </html>
