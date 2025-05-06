@@ -253,6 +253,7 @@ p code {
     font-size: 2rem;
     background: linear-gradient(90deg, #00ffc6, #00a6ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glowAnim 2s ease-in-out infinite alternate;
 }
